@@ -1,0 +1,141 @@
+body {
+  padding-top: 100px; //body{ padding -top: 100px } use gare par nav bar paxadi vitra ko paragraph letter haru lukdaina balki nav bar ko tala bata paragraph start hunxa
+width: 100%;
+
+.navbar{
+display:flex;
+flex-direction: column;
+// justify-content: center;
+align-items: center;
+background-color: #b36c40;
+//  background-image: linear-gradient(to right, #df8823, #e2a742);
+color: #f7faff;
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
+transition: 0.5s all ease;
+
+
+&.active{
+
+    background-color: #ffffff;
+    color: rgb(26, 20, 20);
+}
+
+    .container{
+        // width: 100%; //by black bos
+        width: 1400px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0px;
+        .logo{
+            font-size:30px ;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+            .image{
+               display: flex;
+               align-items: center;
+               height: 100%;
+            }
+            img{
+               height: 40px;
+               object-fit: contain;
+               width: 150px; //if your logi has text you might want a fix width as well
+            }
+            
+        }
+        
+        .links{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 500;
+            font-family: Helvetica, Arial, Roboto, Poppins;
+
+            
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                position: relative;
+
+                img{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50px;
+                    object-fit: cover;
+                }
+
+                .options{
+                    position:absolute;
+                    top: 50px;
+                    right: 0;
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 10px;
+                    border: 1px solid lightgray;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    color: gray;
+                    width: 200px;
+                    font-weight: 300;     
+                }
+            }
+
+            button{
+                color: rgb(221, 209, 209);
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: 1px solid white;
+                cursor: pointer;
+                background-color: transparent;
+
+                &:hover{
+                    background-color:#0a1420;
+                    border-color: #0a1420;
+                }
+            }
+        }
+
+    }
+    hr{
+        
+       width:100% ;
+       height: 0;
+       border: 0.5 solid white;
+    }
+
+    .menu {
+    width: 1400px;
+    display: flex;
+    justify-content: space-between; /* Center the menu items */
+    gap: 20px;
+    padding: 10px 0px; 
+    font-weight: 300;
+     background-color: #f9f8f7;
+    color: rgb(23, 11, 11);
+    font-family: Helvetica, Arial, Roboto, Poppins;
+
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

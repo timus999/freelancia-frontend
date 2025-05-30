@@ -1,0 +1,87 @@
+
+.message{
+display: flex;
+justify-content: center;
+    .container{
+         width: 1200px;
+         margin: 50px;
+        .breadcrumbs{
+            font-weight: 300;
+            font-size: 14px;
+            color: darkgoldenrod;
+        }
+
+        .messages{
+            margin: 30px 0px;
+            padding: 50px;
+            padding-top: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 500px;
+            overflow: scroll; // if bigger than 500 then its scroll
+            
+
+            .item{
+                display: flex;
+                gap: 20px;
+                max-width: 600px;
+                font-size: 18px;
+
+                &.owner{
+                    flex-direction: row-reverse;
+                    align-self: flex-end;
+
+
+                    p{
+                        border-radius: 20px 0px 20px 20px;
+                        background-color: rgb(250, 170, 42);
+                        color: white;
+                    }
+                }
+                
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+                p{
+                    padding: 20px;
+                    background-color: rgb(241, 198, 128);
+                    border-radius: 0px 20px 20px 20px;
+                    color: rgb(65, 49, 49);
+                }   
+            }
+        }
+hr{
+    height: 0px;
+    margin-bottom: 20px;
+}
+        .write{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            textarea{
+                width: 80%;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid rgb(141, 138, 130);
+                border-radius: 15px;
+            }
+
+            button{
+                cursor: pointer;
+                background-color: rgb(80, 202, 71);
+                padding: 20px;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                width: 90px;
+                
+            }
+        }
+    }
+}

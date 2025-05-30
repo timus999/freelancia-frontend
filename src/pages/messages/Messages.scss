@@ -1,0 +1,48 @@
+.messages{
+    display: flex;
+    justify-content: center;
+
+    .container{
+        width: 1400px;
+        padding: 14px 50px;
+        
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    table{
+        width: 100%;
+
+        tr{
+           height: 100px;
+
+           th{
+            text-align: left;
+           }
+           td{
+            padding: 10px;
+            &:first-child{
+                font-weight: 500;
+            }
+            &:nth-child(2) , &:nth-child(3){
+                color: rgb(16, 28, 28);
+            }
+           }
+           button{
+                background-color: rgb(234, 172, 117);
+            color: white;
+            font-weight: 300;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+           }
+           //for each tr &&
+           &.active{
+            background-color: #ffc884;
+           }
+        }
+      }
+    }
+} 

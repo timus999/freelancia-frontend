@@ -1,0 +1,318 @@
+// // .home
+// // {
+// //  position: absolute;
+// //   top: 0px;
+// //   left: 0px;
+// //   right: 0px;
+// //   bottom: 20px;
+// //   overflow-y: auto; // If your content is scrollable
+// // }
+
+// .home {
+//   // Your existing home styles if any
+// .features {
+//   position: relative; 
+//   width: 100%; 
+//   height: 700px; 
+//   overflow: hidden; // Hides any video content that might spill out
+// top: -50px;
+//   .container {
+//     position: absolute; // Make the container fill the features section
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     display: flex; 
+//     justify-content: center; // Center content horizontally
+//     align-items: center; // Center content vertically
+    
+
+//     .video-player-wrapper {
+//       position: absolute; 
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       overflow: hidden; 
+//       z-index: 1; 
+
+//       video {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover; // IMPORTANT: Makes the video cover the entire area without distortion
+        
+//       }
+//     }
+
+//     .video-overlay-text {
+//       position: relative; 
+                          
+//       z-index: 2; 
+//       color: white; 
+//       text-align: center;
+//       padding: 20px; // Add some padding
+//       background-color: rgba(0, 0, 0, 0.3); 
+//       border-radius: 8px; 
+
+//       h1 {
+//         font-size: 3rem; 
+//         margin-bottom: 20px;
+//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+//       }
+
+//       p {
+//         font-size: 1.2rem;
+//         margin-bottom: 30px;
+//       }
+
+//       button {
+//         padding: 12px 25px;
+//         background-color: #1DBF73; // Example green color
+//         color: white;
+//         border: none;
+//         border-radius: 5px;
+//         font-size: 1.1rem;
+//         cursor: pointer;
+//         transition: background-color 0.3s ease;
+        
+//         &:hover {
+//           background-color: #17a363;
+//         }
+//       }
+//     }
+//   }
+
+// }
+
+// .container2{
+//     background-color: rgb(220, 173, 54);
+//     height: 600px;
+//     margin-left: 0px;
+//     margin-right:0px ;
+//     display: flex;
+//     justify-content: space-between;
+//     .left{
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       gap: 20px;
+//       padding-top:50px ;
+//       padding-left: 50px;
+//       color: white;
+//     }
+//     .right{
+//       width: 600px ;
+//       background-color: rgb(220, 173, 54);
+//       display: flex;
+//       align-items: center;
+//       gap: 50px;
+
+//       .containerright{
+//         height: 500px;
+//         width: 350px;
+//         background-color: rgb(255, 255, 255);
+//         border-radius: 50px;
+//         box-shadow: #bfb71d;
+//         display: flex;
+//         align-items: center;
+// img{
+//   height: 500px;
+//   width: 600px;
+//   border-radius: 50px;
+// margin-left:17px ;
+//   object-fit:contain;
+// }
+      
+//       }
+     
+//     }
+
+//   } 
+// }//up to orignal file
+
+
+
+
+// // src/pages/home/Home.scss
+
+.home {
+  // Your existing home styles if any
+
+  .features {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    top: -50px;
+
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      .video-player-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .video-overlay-text {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 30px;
+        }
+
+        button {
+          padding: 12px 25px;
+          background-color: #1DBF73;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.1rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #17a363;
+          }
+        }
+      }
+    }
+  }
+
+  .container2 {
+    background-color: rgb(220, 173, 54);
+    height: 600px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+      padding-top: 50px;
+      padding-left: 50px;
+      color: white;
+    }
+
+    .right {
+      width: 600px;
+      background-color: rgb(220, 173, 54);
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      .containerright {
+        height: 500px;
+        width: 350px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50px;
+        box-shadow: #bfb71d;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 500px;
+          width: 600px;
+          border-radius: 50px;
+          margin-left: 17px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+
+  // Styles for the new photo section (now a grid)
+  .photo-section {
+    padding: 80px 0; // Add some vertical padding
+    background-color: #f8f8f8; // Light background for the section
+
+    .container {
+      width: 100%;
+      max-width: 1200px; // Max width for content
+      margin: 0 auto; // Center the container
+      padding: 0 20px; // Horizontal padding
+
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #333;
+      }
+
+      // Styles for the image grid
+      .photo-grid {
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); // Responsive grid
+        // grid-auto-rows: masonry;
+        // grid-template-rows: masonry;
+        // align-items: stretch;
+        // gap: 20px; // Space between grid items (your WCards)
+        // justify-items: center; // Center grid items within their cells
+
+
+        //new one
+        // Remove all grid properties and replace with column properties
+        display: block; // Or remove this, as it's default
+        column-count: 4; // Adjust as needed, e.g., 3, 5
+        column-gap: 20px; // Space between columns
+
+
+         .wCard {
+          // Ensure cards don't break across columns in the middle
+          break-inside: avoid;
+          margin-bottom: 20px; // Add margin between cards within a column
+          width: 100%; // Make sure WCard takes full column width
+          height: auto; // Crucial: let the WCard's height be determined by its content
+        }
+
+        .wCard img {
+          height: auto; // Crucial: let the image's height be determined by its intrinsic aspect ratio
+          width: 100%;
+          object-fit: contain; // Use 'contain' if you don't want cropping, or 'cover' if you still want it to fill but respect aspect ratio
+        }//up to here
+      }
+    }
+  }
+}//up to dup file
+
+
+
+
+
+
+

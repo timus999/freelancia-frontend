@@ -1,0 +1,98 @@
+// .footer{
+// display:flex;
+// justify-content: center; /* Example: center content */
+// align-items: center; /* Example: center content */
+// height: 100px; /* Example: give it some height */
+// background-color: #41b0cc; /* Example: add a background to see it */
+// color: #d84242; /* Example: add text color */
+// width: 100%;
+
+
+
+// /* Add other styles as needed */
+// }
+
+
+
+
+
+
+// // //footer tala rakhna milni wala code no orignal
+// // .footer {
+// //   display: flex;
+// //   justify-content: center;
+// //   align-items: center;
+// //   height: 100px;
+// //   background-color: #41b0cc;
+// //   color: #d84242;
+// //   width: 100%;
+// //   position: fixed; /* Stick to the viewport */
+// //   bottom: 0;      /* Align to the bottom */
+// //   left: 0;        /* Ensure it spans the full width */
+// // }
+
+
+
+.footer{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    color: rgb(29, 14, 14);
+    margin: 50px 0px;
+
+    img{
+        width: 24px;
+        height: 24px;
+    }
+    .container{
+        width: 1400px;
+        .top{
+            display: flex;
+            justify-content: space-between;
+
+           .item{
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+            h2{
+                font-size: 16px;
+                color: rgb(149, 146, 146);
+            }
+            span{
+                font-weight: 300;
+            }
+           }
+        }
+        hr{
+            margin: 50px 0px;
+            height: 0;
+            border: 1px solid rgb(59, 56, 56);
+        }
+        .bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .left{
+                display: flex;
+            align-items: center;
+            gap: 20px;
+            span{
+                font-size: 15px;
+            }
+            }
+            .right{
+                display: flex;
+            align-items: center;
+            gap:50px ;
+
+            .social{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            }
+        }
+    }
+}
+
+

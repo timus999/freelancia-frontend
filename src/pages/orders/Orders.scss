@@ -1,0 +1,50 @@
+.orders{
+    display: flex;
+    justify-content: center;
+
+    .container{
+        width: 1400px;
+        padding: 14px 50px;
+
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button{
+            background-color: rgb(36, 222, 91);
+            color: white;
+            font-weight: 300;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+    }
+    table{
+        width: 100%;
+
+        tr{
+           height: 50px;
+
+           th{
+            text-align: left;
+           }
+           td{
+            img{
+                width: 50px;
+                height: 25px;
+              object-fit: cover;    
+            }
+            .message{
+                width: 20px;
+               
+            }
+           }
+           //for each tr &&
+           &:nth-child(2n){
+            background-color: #fdf1e2;
+           }
+        }
+    }
+    }
+} 
