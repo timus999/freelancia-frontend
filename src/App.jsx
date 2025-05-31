@@ -10,8 +10,13 @@ import Gig from "./pages/gig/Gig";
 import Add from "./pages/add/Add";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
+
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import FreelancerRegister from "./pages/FreelancerRegister";
+import ClientRegister from "./pages/ClientRegister";
+
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import './App.scss';
 import WCard from "./components/wCard/WCard"; // Keep this import if WCard is used elsewhere, even if not directly in App.jsx
@@ -71,14 +76,24 @@ function App() {
           path: "/message/:id", // Single message detail page, with a dynamic ID parameter
           element: <Message />,
         },
-        {
-          path: "/login", // Login page
-          element: <Login />,
-        },
-        {
-          path: "/register", // Register page
-          element: <Register />,
-        },
+
+         {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register", // This route already exists in your Navbar, but you might want a more specific one for "Join"
+      element: <Register />, // Make sure this points to your main Register page
+    },
+    {
+        path: "/client-register", // Example route for Client Register
+        element: <ClientRegister />,
+    },
+    {
+        path: "/freelancer-register", // Example route for Freelancer Register
+        element: <FreelancerRegister />,
+    },
+        
       ],
     },
   ]);

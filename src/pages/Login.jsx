@@ -41,7 +41,6 @@ export default function Login() {
         email: formData.email,
         password: formData.password,
       });
-
       localStorage.setItem("token", response.token);
       showToast("Login successful!", "success");
       navigate("/dashboard");
@@ -55,7 +54,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-white p-800 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         {loading ? (
           <Spinner />

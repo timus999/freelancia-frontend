@@ -1,137 +1,299 @@
+// body {
+//   padding-top: 100px; //body{ padding -top: 100px } use gare par nav bar paxadi vitra ko paragraph letter haru lukdaina balki nav bar ko tala bata paragraph start hunxa
+// width: 100%;
+
+// .navbar{
+// display:flex;
+// flex-direction: column;
+// // justify-content: center;
+// align-items: center;
+// background-color: #b36c40;
+// //  background-image: linear-gradient(to right, #df8823, #e2a742);
+// color: #f7faff;
+// width: 100%;
+// position: fixed;
+// top: 0;
+// left: 0;
+// z-index: 10;
+// transition: 0.5s all ease;
+
+
+// &.active{
+
+//     background-color: #ffffff;
+//     color: rgb(26, 20, 20);
+// }
+
+//     .container{
+//         // width: 100%; //by black bos
+//         width: 1400px;
+//         display: flex;
+//         justify-content: space-between;
+//         padding: 20px 0px;
+//         .logo{
+//             font-size:30px ;
+//             font-weight: bold;
+//             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+//             .image{
+//                display: flex;
+//                align-items: center;
+//                height: 100%;
+//             }
+//             img{
+//                height: 40px;
+//                object-fit: contain;
+//                width: 150px; //if your logi has text you might want a fix width as well
+//             }
+            
+//         }
+        
+//         .links{
+//             display: flex;
+//             align-items: center;
+//             gap: 20px;
+//             font-weight: 500;
+//             font-family: Helvetica, Arial, Roboto, Poppins;
+
+            
+
+//             .user{
+//                 display: flex;
+//                 align-items: center;
+//                 gap: 10px;
+//                 cursor: pointer;
+//                 position: relative;
+
+//                 img{
+//                     width: 32px;
+//                     height: 32px;
+//                     border-radius: 50px;
+//                     object-fit: cover;
+//                 }
+
+//                 .options{
+//                     position:absolute;
+//                     top: 50px;
+//                     right: 0;
+//                     padding: 20px;
+//                     background-color: white;
+//                     border-radius: 10px;
+//                     border: 1px solid lightgray;
+//                     display: flex;
+//                     flex-direction: column;
+//                     gap: 10px;
+//                     color: gray;
+//                     width: 200px;
+//                     font-weight: 300;     
+//                 }
+//             }
+
+//             button{
+//                 color: rgb(221, 209, 209);
+//                 padding: 10px 20px;
+//                 border-radius: 5px;
+//                 border: 1px solid white;
+//                 cursor: pointer;
+//                 background-color: transparent;
+
+//                 &:hover{
+//                     background-color:#0a1420;
+//                     border-color: #0a1420;
+//                 }
+//             }
+//         }
+
+//     }
+//     hr{
+        
+//        width:100% ;
+//        height: 0;
+//        border: 0.5 solid white;
+//     }
+
+//     .menu {
+//     width: 1400px;
+//     display: flex;
+//     justify-content: space-between; /* Center the menu items */
+//     gap: 20px;
+//     padding: 10px 0px; 
+//     font-weight: 300;
+//      background-color: #f9f8f7;
+//     color: rgb(23, 11, 11);
+//     font-family: Helvetica, Arial, Roboto, Poppins;
+
+//   }
+// }
+// }
+
+
+
+
+
+
 body {
   padding-top: 100px; //body{ padding -top: 100px } use gare par nav bar paxadi vitra ko paragraph letter haru lukdaina balki nav bar ko tala bata paragraph start hunxa
-width: 100%;
+  width: 100%;
 
-.navbar{
-display:flex;
-flex-direction: column;
-// justify-content: center;
-align-items: center;
-background-color: #b36c40;
-//  background-image: linear-gradient(to right, #df8823, #e2a742);
-color: #f7faff;
-width: 100%;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 10;
-transition: 0.5s all ease;
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    background-color: #b36c40;
+    //  background-image: linear-gradient(to right, #df8823, #e2a742);
+    color: #f7faff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: 0.5s all ease;
 
-
-&.active{
-
-    background-color: #ffffff;
-    color: rgb(26, 20, 20);
-}
-
-    .container{
-        // width: 100%; //by black bos
-        width: 1400px;
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 0px;
-        .logo{
-            font-size:30px ;
-            font-weight: bold;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            
-            .image{
-               display: flex;
-               align-items: center;
-               height: 100%;
-            }
-            img{
-               height: 40px;
-               object-fit: contain;
-               width: 150px; //if your logi has text you might want a fix width as well
-            }
-            
-        }
-        
-        .links{
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            font-weight: 500;
-            font-family: Helvetica, Arial, Roboto, Poppins;
-
-            
-
-            .user{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                cursor: pointer;
-                position: relative;
-
-                img{
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50px;
-                    object-fit: cover;
-                }
-
-                .options{
-                    position:absolute;
-                    top: 50px;
-                    right: 0;
-                    padding: 20px;
-                    background-color: white;
-                    border-radius: 10px;
-                    border: 1px solid lightgray;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    color: gray;
-                    width: 200px;
-                    font-weight: 300;     
-                }
-            }
-
-            button{
-                color: rgb(221, 209, 209);
-                padding: 10px 20px;
-                border-radius: 5px;
-                border: 1px solid white;
-                cursor: pointer;
-                background-color: transparent;
-
-                &:hover{
-                    background-color:#0a1420;
-                    border-color: #0a1420;
-                }
-            }
-        }
-
+    &.active {
+      background-color: #ffffff;
+      color: rgb(26, 20, 20);
     }
-    hr{
-        
-       width:100% ;
-       height: 0;
-       border: 0.5 solid white;
+
+    .container {
+      // width: 100%; //by black bos
+      width: 1400px;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0px;
+
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        .image {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
+        img {
+          height: 40px;
+          object-fit: contain;
+          width: 150px; //if your logi has text you might want a fix width as well
+        }
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 500;
+        font-family: Helvetica, Arial, Roboto, Poppins;
+        position: relative; // Added for positioning of .join-group dropdown
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          position: relative;
+
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50px;
+            object-fit: cover;
+          }
+
+          .options {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid lightgray;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: gray;
+            width: 200px;
+            font-weight: 300;
+          }
+        }
+
+        button {
+          color: rgb(221, 209, 209);
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: 1px solid white;
+          cursor: pointer;
+          background-color: transparent;
+          transition: background-color 0.3s ease, border-color 0.3s ease; // Added transition
+
+          &:hover {
+            background-color: #0a1420;
+            border-color: #0a1420;
+          }
+        }
+
+        // Styles for the new "Join" dropdown
+        .join-group {
+          position: relative;
+          display: inline-block; // Allows button and dropdown to be side-by-side
+          cursor: pointer; // Indicate it's interactive
+
+          // The button inside .join-group will inherit styles from the general button rule above
+          // unless specifically overridden here.
+
+          .register-options {
+            position: absolute;
+            top: 100%; // Position below the button
+            left: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000; // Ensure it appears above other content
+            min-width: 160px; // Adjust as needed
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            margin-top: 5px; // Small gap between button and dropdown
+
+            .link {
+              color: gray; // Match existing link color
+              padding: 8px 15px;
+              text-decoration: none;
+              display: block; // Make links take full width
+              transition: background-color 0.2s ease;
+              font-weight: 300; // Match other options font weight
+
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 100%;
+      height: 0;
+      border: 0.5px solid white; // Corrected to 0.5px from 0.5
     }
 
     .menu {
-    width: 1400px;
-    display: flex;
-    justify-content: space-between; /* Center the menu items */
-    gap: 20px;
-    padding: 10px 0px; 
-    font-weight: 300;
-     background-color: #f9f8f7;
-    color: rgb(23, 11, 11);
-    font-family: Helvetica, Arial, Roboto, Poppins;
-
+      width: 1400px;
+      display: flex;
+      justify-content: space-between; /* Center the menu items */
+      gap: 20px;
+      padding: 10px 0px;
+      font-weight: 300;
+      background-color: #f9f8f7;
+      color: rgb(23, 11, 11);
+      font-family: Helvetica, Arial, Roboto, Poppins;
+    }
   }
 }
-}
-
-
-
-
-
-
-
 
 
 
