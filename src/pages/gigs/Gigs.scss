@@ -1,95 +1,128 @@
-.gigs
-{
+.gigs {
     display: flex;
     justify-content: center;
-  .container{
-    width: 1400px;
-    padding: 30px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    background-color: #f9f9f9; // Light background for contrast
+    padding: 30px 0; // Add padding to the top and bottom
 
-    .breadcrumbs{
-       font-weight: 300;
-       font-size: 15px;
-       color: rgb(62, 59, 59);
-    }
-
-    p{
-        color: rgb(248, 139, 29);
-        font-size: 17px;
-        font-weight: 300;
-    }
-    .menu{
+    .container {
+        width: 1400px;
+        padding: 30px;
+        background-color: white; // White background for the container
+        border-radius: 10px; // Rounded corners
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 15px;
 
-        .left{
+        .breadcrumbs {
+            font-weight: 300;
+            font-size: 15px;
+            color: rgb(62, 59, 59);
+        }
+        h1{
+            font-size: 25px;
+        }
+
+        p {
+            color: rgb(248, 139, 29);
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        .menu {
             display: flex;
             align-items: center;
-            gap:10px;
-            color: rgb(38, 38, 30);
-            input{
-                padding:5px;
-                border: 1px solid rgb(10, 8, 8);
-                outline: none;
+            justify-content: space-between;
 
-                &::placeholder{
-                    color: rgb(78, 81, 77);
+            .left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: rgb(38, 38, 30);
+
+                input {
+                    padding: 10px; // Increased padding for better usability
+                    border: 1px solid rgb(10, 8, 8);
+                    outline: none;
+                    border-radius: 5px; // Rounded corners
+
+                    &::placeholder {
+                        color: rgb(78, 81, 77);
+                    }
                 }
-            }
-            button{
-                    background-color:rgb(217, 149, 81);
+
+                button {
+                    background-color: rgb(217, 149, 81);
                     color: white;
                     font-weight: 500;
                     border: none;
                     cursor: pointer;
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                }
-        }
-        .right{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            .sortBy{
-                color: gray;
-                font-weight: 300;
-            }
-            .sortType{
-                font-weight: 500;
-            }
-            img{
-                width: 20px;
-                cursor: pointer;
-            }
-            .rightMenu{
-                padding:20px;
-                background-color: white;
-                border-radius:5px;
-                border: .5px solid lightgray;
-                position: absolute;
-                top: 30px;
-                right: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                color: rgb(119, 115, 115);
+                    padding: 10px 15px; // Increased padding for better usability
+                    border-radius: 5px; // Rounded corners
+                    transition: background-color 0.3s; // Smooth transition for hover
 
-                span{
+                    &:hover {
+                        background-color: rgb(255, 180, 88); // Lighter color on hover
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                position: relative;
+
+                .sortBy {
+                    color: gray;
+                    font-weight: 300;
+                }
+
+                .sortType {
+                    font-weight: 500;
+                }
+
+                img {
+                    width: 20px;
                     cursor: pointer;
                 }
+
+                .rightMenu {
+                    padding: 10px; // Reduced padding for the dropdown
+                    background-color: white;
+                    border-radius: 5px;
+                    border: 0.5px solid lightgray;
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px; // Reduced gap for better alignment
+                    color: rgb(119, 115, 115);
+
+                    span {
+                        cursor: pointer;
+                        transition: color 0.3s; // Smooth transition for hover
+
+                        &:hover {
+                            color: rgb(248, 139, 29); // Change color on hover
+                        }
+                    }
+                }
+            }
+        }
+
+        .cards {
+             display: flex;
+  flex-wrap: wrap;
+  gap: 20px; // Add some spacing between cards
+  justify-content: space-between; // Spread out the cards evenly
+
+            .gigCard {
+                max-width: 300px; // Set a maximum width for the cards
+                width: 100%; // Make the card take full width of the grid cell
+               
             }
         }
     }
-
-   .cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-   }
-  }
-
 }

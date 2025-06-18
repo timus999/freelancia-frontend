@@ -1,159 +1,32 @@
-// // .home
-// // {
-// //  position: absolute;
-// //   top: 0px;
-// //   left: 0px;
-// //   right: 0px;
-// //   bottom: 20px;
-// //   overflow-y: auto; // If your content is scrollable
-// // }
-
-// .home {
-//   // Your existing home styles if any
-// .features {
-//   position: relative; 
-//   width: 100%; 
-//   height: 700px; 
-//   overflow: hidden; // Hides any video content that might spill out
-// top: -50px;
-//   .container {
-//     position: absolute; // Make the container fill the features section
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     display: flex; 
-//     justify-content: center; // Center content horizontally
-//     align-items: center; // Center content vertically
-    
-
-//     .video-player-wrapper {
-//       position: absolute; 
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//       overflow: hidden; 
-//       z-index: 1; 
-
-//       video {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover; // IMPORTANT: Makes the video cover the entire area without distortion
-        
-//       }
-//     }
-
-//     .video-overlay-text {
-//       position: relative; 
-                          
-//       z-index: 2; 
-//       color: white; 
-//       text-align: center;
-//       padding: 20px; // Add some padding
-//       background-color: rgba(0, 0, 0, 0.3); 
-//       border-radius: 8px; 
-
-//       h1 {
-//         font-size: 3rem; 
-//         margin-bottom: 20px;
-//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-//       }
-
-//       p {
-//         font-size: 1.2rem;
-//         margin-bottom: 30px;
-//       }
-
-//       button {
-//         padding: 12px 25px;
-//         background-color: #1DBF73; // Example green color
-//         color: white;
-//         border: none;
-//         border-radius: 5px;
-//         font-size: 1.1rem;
-//         cursor: pointer;
-//         transition: background-color 0.3s ease;
-        
-//         &:hover {
-//           background-color: #17a363;
-//         }
-//       }
-//     }
-//   }
-
-// }
-
-// .container2{
-//     background-color: rgb(220, 173, 54);
-//     height: 600px;
-//     margin-left: 0px;
-//     margin-right:0px ;
-//     display: flex;
-//     justify-content: space-between;
-//     .left{
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: flex-start;
-//       gap: 20px;
-//       padding-top:50px ;
-//       padding-left: 50px;
-//       color: white;
-//     }
-//     .right{
-//       width: 600px ;
-//       background-color: rgb(220, 173, 54);
-//       display: flex;
-//       align-items: center;
-//       gap: 50px;
-
-//       .containerright{
-//         height: 500px;
-//         width: 350px;
-//         background-color: rgb(255, 255, 255);
-//         border-radius: 50px;
-//         box-shadow: #bfb71d;
-//         display: flex;
-//         align-items: center;
-// img{
-//   height: 500px;
-//   width: 600px;
-//   border-radius: 50px;
-// margin-left:17px ;
-//   object-fit:contain;
-// }
-      
-//       }
-     
-//     }
-
-//   } 
-// }//up to orignal file
-
-
-
-
-// // src/pages/home/Home.scss
 
 .home {
-  // Your existing home styles if any
-
+h1{
+  
+  display: flex;
+  font-size: 50px;
+  justify-content: center; 
+}
   .features {
     position: relative;
-    width: 100%;
+    width: 98%;
     height: 700px;
+    margin-left: 10px;
     overflow: hidden;
     top: -50px;
+    border-radius: 20px;
 
     .container {
+      
       position: absolute;
       top: 0;
-      left: 0;
+      margin-left: 10px;
+      margin-right: 10px;
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 20px;
 
 
       .video-player-wrapper {
@@ -164,11 +37,13 @@
         height: 100%;
         overflow: hidden;
         z-index: 1;
+        
 
         video {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 20px;
         }
       }
 
@@ -211,7 +86,7 @@
   }
 
   .container2 {
-    background-color: rgb(220, 173, 54);
+    background-color: rgb(25, 19, 3);
     height: 600px;
     margin-left: 0px;
     margin-right: 0px;
@@ -230,7 +105,7 @@
 
     .right {
       width: 600px;
-      background-color: rgb(220, 173, 54);
+      background-color: rgb(252, 251, 250);
       display: flex;
       align-items: center;
       gap: 50px;
@@ -238,7 +113,7 @@
       .containerright {
         height: 500px;
         width: 350px;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(251, 251, 251);
         border-radius: 50px;
         box-shadow: #bfb71d;
         display: flex;
@@ -287,9 +162,9 @@
 
         //new one
         // Remove all grid properties and replace with column properties
-        display: block; // Or remove this, as it's default
-        column-count: 4; // Adjust as needed, e.g., 3, 5
-        column-gap: 20px; // Space between columns
+        //  display: block; // Or remove this, as it's default
+        column-count: 6; // Adjust as needed, e.g., 3, 5
+         column-gap: 20px; // Space between columns
 
 
          .wCard {

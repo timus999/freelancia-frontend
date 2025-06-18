@@ -7,7 +7,7 @@ const Messages = () =>{
  const currentUser={
     id:1,
     username: "Ariana",
-    isSeller: true, 
+    isFreelancer: true, 
 };
 
 const message = `hi my name is abin gahatraj and i am a UI/UX designer.`

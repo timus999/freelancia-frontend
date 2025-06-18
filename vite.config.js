@@ -1,20 +1,16 @@
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-// import tailwind from '@tailwindcss/vite';
-
-// export default defineConfig({
-//   plugins: [react(), tailwind()],
-// });
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
-import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'; 
+import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'path'; // <--- IMPORT THIS LINE
 
 export default defineConfig({
   plugins: [
-    react(),tailwindcss(),
-    // Add the polyfill plugins here
+    react(),
+    tailwindcss(),
+    // Add the polyfill plugins here (ensure they are only defined once,
+    // either here or in esbuildOptions, but not both in the top-level plugins array)
     NodeGlobalsPolyfillPlugin({
       process: true,
       buffer: true,
@@ -28,7 +24,9 @@ export default defineConfig({
       define: {
         global: 'globalThis',
       },
-      // Enable esbuild polyfill plugins
+      // Enable esbuild polyfill plugins (if not already handled by top-level plugins)
+      // It's generally better to put these directly in the 'plugins' array if they are Vite plugins.
+      // If they are specific esbuild plugins for optimizeDeps, then keep them here.
       plugins: [
         NodeGlobalsPolyfillPlugin({
           process: true,
@@ -40,8 +38,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // This ensures 'buffer' points to the installed polyfill
+      // This ensures 'buffer' points to the installed polyfill (if needed)
       buffer: 'buffer/',
+      // <--- ADD THIS ALIAS FOR @/
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });

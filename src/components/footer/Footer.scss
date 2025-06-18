@@ -34,7 +34,7 @@
 
 
 .footer{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 252, 247);
     display: flex;
     justify-content: center;
     color: rgb(29, 14, 14);
@@ -55,8 +55,9 @@
             flex-direction: column;
             gap: 19px;
             h2{
+                margin-top: 10px;
                 font-size: 16px;
-                color: rgb(149, 146, 146);
+                color: rgb(1, 1, 1);
             }
             span{
                 font-weight: 300;
@@ -75,15 +76,19 @@
             .left{
                 display: flex;
             align-items: center;
-            gap: 20px;
+            
             span{
-                font-size: 15px;
+                font-size: 20px;
+                color: rgb(44, 42, 42);
+                margin-top: -50px;
             }
+
             }
             .right{
                 display: flex;
             align-items: center;
             gap:50px ;
+            margin-top: -50px;
 
             .social{
                 display: flex;

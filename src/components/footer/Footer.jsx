@@ -54,7 +54,7 @@ const Footer = () =>{
 <hr/>
              <div className="bottom">
                 <div className="left">
-                    <h2>Freelancia</h2>
+                    {/* <h2>Freelancia</h2> */}
                     <span>Freelancia Ltd. 2025</span>
                 </div>
                 <div className="right">

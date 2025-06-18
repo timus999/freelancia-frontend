@@ -7,7 +7,7 @@ const Orders = () =>{
  const currentUser={
     id:1,
     username: "Ariana",
-    isSeller: true, 
+    isFreelancer: true, 
 };
     return (
         <div className='orders'>
@@ -20,7 +20,7 @@ const Orders = () =>{
                         <th> Image</th>
                         <th>Title</th>
                         <th>Price</th>
-                        <th>{currentUser?.isSeller ? "Buyer" : "Seller"}</th>
+                        <th>{currentUser?.isFreelancer ? "Buyer" : "Freelancer"}</th>
                         <th>Contact</th>
                     </tr>
                     <tr>

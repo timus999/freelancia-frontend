@@ -1,41 +1,64 @@
-.add{
+
+.add {
     display: flex;
     justify-content: center;
-    .container{
+    background-color: #f9f9f9; // Light background for contrast
+    padding: 50px; // Add padding to the top and bottom
+
+    .container {
         width: 1400px;
-        padding: 50px 0px;
-        h1{
-            color: gray;
-            font-weight: 300;
-            margin-bottom: 30px;
+        padding: 50px;
+        background-color: white; // White background for the form
+        border-radius: 10px; // Rounded corners
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+        h1 {
+            width: auto;
+            font-size: 30px;
+            color: #333; // Darker text for better readability
+            font-weight: 600; // Bolder font weight
+            margin-bottom: 20px;
+            text-align: left; // Center the title
         }
-        .sections{
+        .sections {
             display: flex;
             justify-content: space-between;
-            gap:100px;
+            gap: 50px; // Reduced gap for better alignment
 
-            .left, .right{
+            .left, .right {
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
-                justify-content: space-between;
+                gap: 15px; // Increased gap for better spacing
 
-                label{
+                label {
                     color: rgb(37, 40, 45);
-                    font-size: 20px;
+                    font-size: 18px; // Slightly smaller font size
+                    font-weight: 500; // Medium font weight
                 }
-                input,select,textarea{
-                    padding: 20px;
+                input, select, textarea {
+                    padding: 15px; // Reduced padding for a more compact look
+                    border: 1px solid #ccc; // Light border
+                    border-radius: 5px; // Rounded corners
+                    font-size: 16px; // Consistent font size
+                    transition: border-color 0.3s; // Smooth transition for focus
+                    &:focus {
+                        border-color: rgb(227, 159, 49); // Highlight border on focus
+                        outline: none; // Remove default outline
+                    }
                 }
-                button{
+                button {
                     border: none;
                     background-color: rgb(227, 159, 49);
                     cursor: pointer;
                     color: white;
-                    font-weight: 500;
+                    font-weight: 600; // Bolder font weight
                     font-size: 18px;
-                    padding: 20px;
+                    padding: 15px; // Reduced padding for a more compact button
+                    border-radius: 5px; // Rounded corners
+                    transition: background-color 0.3s; // Smooth transition for hover
+                    &:hover {
+                        background-color: rgb(255, 180, 88); // Lighter color on hover
+                    }
                 }
             }
         }
