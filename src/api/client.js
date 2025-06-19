@@ -1,87 +1,82 @@
-import { apiClient } from "./client.js"
+// // src/api/client.js
+// import axios from "axios"
 
-export const authAPI = {
-  // Sign up new user
-  signup: async (userData) => {
-    try {
-      const response = await apiClient.post("/signup", {
-        email: userData.email,
-        password: userData.password,
-        role: userData.role, // 'client' or 'freelancer'
-      })
-      return response
-    } catch (error) {
-      throw new Error(error.message || "Signup failed")
+// const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000/api"
+
+// const client = axios.create({
+//   baseURL: API_BASE_URL,
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// })
+
+// // Request interceptor to add auth token
+// client.interceptors.request.use(
+//   (config) => {
+//     const token = localStorage.getItem("token")
+//     if (token) {
+//       config.headers.Authorization = `Bearer ${token}`
+//     }
+//     return config
+//   },
+//   (error) => {
+//     return Promise.reject(error)
+//   },
+// )
+
+// // Response interceptor to handle auth errors
+// client.interceptors.response.use(
+//   (response) => response,
+//   (error) => {
+//     if (error.response?.status === 401) {
+//       localStorage.removeItem("token")
+//       localStorage.removeItem("currentUser")
+//       window.location.href = "/login"
+//     }
+//     return Promise.reject(error)
+//   },
+// )
+
+// export default client
+
+
+// src/api/client.js
+import axios from "axios"
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api"
+
+const client = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+
+// Request interceptor to add auth token
+client.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
     }
+    return config
   },
+  (error) => {
+    return Promise.reject(error)
+  },
+)
 
-  // Login user
-  login: async (credentials) => {
-    try {
-      const response = await apiClient.post("/login", {
-        email: credentials.email,
-        password: credentials.password,
-      })
-
-      if (response.token) {
-        localStorage.setItem("authToken", response.token)
-        localStorage.setItem("userRole", response.role)
-        localStorage.setItem("userId", response.user_id)
-      }
-
-      return response
-    } catch (error) {
-      throw new Error(error.message || "Login failed")
+// Response interceptor to handle auth errors
+client.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem("token")
+      localStorage.removeItem("currentUser")
+      window.location.href = "/login"
     }
+    return Promise.reject(error)
   },
+)
 
-  // Logout user
-  logout: async () => {
-    try {
-      await apiClient.post("/logout")
-      localStorage.removeItem("authToken")
-      localStorage.removeItem("userRole")
-      localStorage.removeItem("userId")
-      return { success: true }
-    } catch (error) {
-      // Even if logout fails on server, clear local storage
-      localStorage.removeItem("authToken")
-      localStorage.removeItem("userRole")
-      localStorage.removeItem("userId")
-      throw new Error(error.message || "Logout failed")
-    }
-  },
-
-  // Get basic profile
-  getBasicProfile: async () => {
-    try {
-      return await apiClient.get("/profile/basic")
-    } catch (error) {
-      throw new Error(error.message || "Failed to fetch profile")
-    }
-  },
-
-  // Get verified profile
-  getVerifiedProfile: async () => {
-    try {
-      return await apiClient.get("/profile/verified")
-    } catch (error) {
-      throw new Error(error.message || "Failed to fetch verified profile")
-    }
-  },
-
-  // Check if user is authenticated
-  isAuthenticated: () => {
-    return !!localStorage.getItem("authToken")
-  },
-
-  // Get user role
-  getUserRole: () => {
-    return localStorage.getItem("userRole")
-  },
-
-  // Get user ID
-  getUserId: () => {
-    return localStorage.getItem("userId")
-  },
-}
+export default client

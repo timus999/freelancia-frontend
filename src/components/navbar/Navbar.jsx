@@ -121,82 +121,93 @@
 // export default Navbar;
 
 
-//by v0dev
+//route correct
 "use client"
 
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { useAuth } from "../../contexts/AuthContext"
+import React, { useEffect, useState } from "react"
 import "./Navbar.scss"
+import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useAuth } from "../../contexts/AuthContext"
 
-function Navbar() {
-  const [active, setActive] = useState(false)
+const Navbar = () => {
+  const [active, setActive] = React.useState(false)
   const [open, setOpen] = useState(false)
-  const { user, logout } = useAuth()
+  const { pathname } = useLocation()
   const navigate = useNavigate()
+  const { user, logout, isFreelancer, isClient } = useAuth()
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false)
   }
 
-  window.addEventListener("scroll", isActive)
+  useEffect(() => {
+    window.addEventListener("scroll", isActive)
+    return () => {
+      window.removeEventListener("scroll", isActive)
+    }
+  }, [])
 
   const handleLogout = async () => {
-    try {
-      await logout()
-      navigate("/")
-    } catch (error) {
-      console.error("Logout error:", error)
-    }
+    await logout()
+    navigate("/")
   }
 
   return (
-    <div className={active || window.location.pathname !== "/" ? "navbar active" : "navbar"}>
+    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
-          <Link className="link" to="/">
-            <span className="text">Freelancia</span>
+          <Link to="/" className="link">
+            Freelancia
           </Link>
         </div>
         <div className="links">
-          <span>Freelancia Business</span>
-          <span>Explore</span>
-          <span>English</span>
-
-          {!user ? (
-            <>
-              <Link to="/login" className="link">
-                Sign in
-              </Link>
-              <Link className="link" to="/register">
-                <button>Join</button>
-              </Link>
-            </>
-          ) : (
+          <span>About Us</span>
+          <span>Contact</span>
+          <span>Explore More</span>
+          {!user && (
+            <Link className="link" to="/login">
+              Login In
+            </Link>
+          )}
+          {!user && (
+            <Link className="link" to="/register">
+              <button>Register</button>
+            </Link>
+          )}
+          {user && (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img src={user.avatar || "/placeholder.svg?height=32&width=32"} alt="User Avatar" />
-              <span>{user.username || user.email}</span>
+              <img
+                src={
+                  user.profile_picture ||
+                  "https://www.billboard.com/wp-content/uploads/2022/08/Ariana-Grande-the-voice-2021-billboard-1548.jpg?w=875&h=583&crop=1" ||
+                  "/placeholder.svg"
+                }
+                alt=""
+              />
+              <span>{user?.username || `${user?.firstName} ${user?.lastName}`}</span>
+
               {open && (
                 <div className="options">
-                  {user.role === "freelancer" ? (
+                  {isFreelancer && (
                     <>
-                      <Link className="link" to="/findjob">
-                        Find Jobs
-                      </Link>
                       <Link className="link" to="/mygigs">
-                        My Gigs
+                        Gigs
                       </Link>
                       <Link className="link" to="/add">
                         Add New Gig
                       </Link>
+                      <Link className="link" to="/findjob">
+                        Find Jobs
+                      </Link>
                     </>
-                  ) : (
+                  )}
+                  {isClient && (
                     <>
                       <Link className="link" to="/postjob">
                         Post Job
                       </Link>
-                      <Link className="link" to="/orders">
-                        My Orders
+                      <Link className="link" to="/freelancer-search">
+                        Find Freelancers
                       </Link>
                     </>
                   )}
@@ -206,48 +217,42 @@ function Navbar() {
                   <Link className="link" to="/messages">
                     Messages
                   </Link>
-                  <Link className="link" onClick={handleLogout}>
-                    Logout
+                  <Link className="link" to={isFreelancer ? "/freelancer-profile" : "/client-profile"}>
+                    Profile
                   </Link>
+                  <span onClick={handleLogout}>Logout</span>
                 </div>
               )}
             </div>
           )}
         </div>
       </div>
-      {(active || window.location.pathname !== "/") && (
+      {(active || pathname !== "/") && (
         <>
           <hr />
           <div className="menu">
-            <Link className="link menuLink" to="/">
-              Graphics & Design
+            <Link className="link menuLink" to="/gigs?category=graphics">
+              Graphics Designing
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=video">
               Video & Animation
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=writing">
               Writing & Translation
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=ai">
               AI Services
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=marketing">
               Digital Marketing
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=music">
               Music & Audio
             </Link>
-            <Link className="link menuLink" to="/">
+            <Link className="link" to="/gigs?category=programming">
               Programming & Tech
             </Link>
-            <Link className="link menuLink" to="/">
-              Business
-            </Link>
-            <Link className="link menuLink" to="/">
-              Lifestyle
-            </Link>
           </div>
-          <hr />
         </>
       )}
     </div>

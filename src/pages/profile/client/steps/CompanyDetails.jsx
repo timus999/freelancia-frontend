@@ -1,4 +1,7 @@
+"use client"
+
 import { useState } from "react"
+
 function CompanyDetails({ data, onChange, onNext, onPrevious }) {
   const [formData, setFormData] = useState({
     companyName: data.companyName || "",

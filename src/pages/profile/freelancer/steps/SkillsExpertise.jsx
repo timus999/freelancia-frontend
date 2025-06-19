@@ -1,4 +1,7 @@
+"use client"
+
 import { useState } from "react"
+
 function SkillsExpertise({ data, onChange, onNext, onPrevious }) {
   const [formData, setFormData] = useState({
     category: data.category || "",
@@ -102,7 +105,7 @@ function SkillsExpertise({ data, onChange, onNext, onPrevious }) {
           {errors.category && <span className="error-text">{errors.category}</span>}
         </div>
 
-      <div className="form-group">
+        <div className="form-group">
           <label>Skills *</label>
           <div className="skills-container">
             <div className="skills-input-group">

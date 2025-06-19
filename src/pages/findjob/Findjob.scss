@@ -1,581 +1,531 @@
-// CSS Custom Properties (Design System)
+// CSS Custom Properties
 :root {
-  // Colors
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-primary-light: #dbeafe;
-  --color-secondary: #8b5cf6;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  
-  // Neutrals
-  --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  
-  // Gradients
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --gradient-background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  
-  // Spacing Scale
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  
-  // Border Radius
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-full: 9999px;
-  
-  // Shadows
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  
-  // Typography
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
-  
-  // Transitions
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --success-gradient: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  --background-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --featured-gradient: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --primary-color: #3b82f6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
 }
 
-// ===================================
-// MAIN PAGE LAYOUT
-// ===================================
-
+// Main Container
 .find-job-page {
   min-height: 100vh;
-  background: var(--gradient-background);
-  padding: var(--space-8) 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background-gradient);
+  padding: var(--spacing-xl) 0;
+
+  .find-job-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
 }
 
-.find-job-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 var(--space-4);
-}
-
-// ===================================
-// HEADER SECTION
-// ===================================
-
+// Header Section
 .find-job-header {
   text-align: center;
-  margin-bottom: var(--space-12);
-  
+  margin-bottom: var(--spacing-xl);
+
   .find-job-title {
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-4);
-    line-height: 1.2;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
   }
-  
+
   .find-job-subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--color-gray-600);
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--gray-500);
   }
 }
 
-// ===================================
-// SEARCH SECTION
-// ===================================
+// Filters Section
+.find-job-filters {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--card-shadow);
 
-.find-job-search {
-  margin-bottom: var(--space-8);
-  
-  .search-input {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-    padding: var(--space-4);
-    font-size: var(--font-size-base);
-    border: 2px solid var(--color-gray-300);
-    border-radius: var(--radius-xl);
-    background: var(--color-white);
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-fast);
-    
-    &:focus {
-      outline: none;
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-      transform: translateY(-1px);
-    }
-    
-    &::placeholder {
-      color: var(--color-gray-400);
+  .find-job-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+
+    .filter-item {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
 
-// ===================================
-// JOB CARDS GRID
-// ===================================
+// Custom Input Styles
+.find-job-search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
 
-.find-job-grid {
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  &::placeholder {
+    color: var(--gray-400);
+  }
+}
+
+.find-job-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  background: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
+
+// Results Summary
+.find-job-results-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+
+  .find-job-results-count {
+    color: var(--gray-600);
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+}
+
+// Project Cards Container
+.find-job-project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+// Project Card Styles
+.find-job-project-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  &.find-job-project-card-featured {
+    border: 2px solid var(--primary-color);
+    background: var(--featured-gradient);
+  }
+}
+
+.find-job-card-content {
+  padding: var(--spacing-lg);
+}
+
+// Badges
+.find-job-featured-badge {
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+  display: inline-block;
+}
+
+.find-job-category-badge {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  border: 1px solid var(--gray-200);
+}
+
+.find-job-skill-badge {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  border: none;
+}
+
+// Project Details Layout
+.find-job-project-details-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
-  
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-xl);
+  align-items: start;
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
+    gap: var(--spacing-lg);
   }
 }
 
-// ===================================
-// JOB CARD STYLES
-// ===================================
-
-.job-card {
-  background: var(--gradient-card);
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-gray-200);
-  overflow: hidden;
-  transition: all var(--transition-normal);
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-  }
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    
-    &::before {
-      opacity: 1;
-    }
-  }
+// Project Information
+.find-job-project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
 }
 
-.job-card-header {
-  padding: var(--space-6) var(--space-6) var(--space-4);
-  
-  .job-title {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-3);
-    line-height: 1.3;
-    
-    &:hover {
-      color: var(--color-primary);
-      cursor: pointer;
-    }
-  }
-  
-  .job-meta {
+.find-job-project-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+
+  .find-job-meta-item {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    
-    .job-meta-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      color: var(--color-gray-500);
-      font-size: var(--font-size-sm);
-      font-weight: 500;
-      
-      .job-icon {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
+    gap: var(--spacing-xs);
+    color: var(--gray-500);
+    font-size: 0.875rem;
+
+    .find-job-icon {
+      width: 16px;
+      height: 16px;
     }
   }
 }
 
-.job-card-body {
-  padding: 0 var(--space-6) var(--space-4);
-  
-  .job-description {
-    color: var(--color-gray-700);
-    line-height: 1.6;
-    margin-bottom: var(--space-4);
-    font-size: var(--font-size-sm);
-  }
-  
-  .job-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-    
-    .skill-badge {
-      background: var(--color-primary-light);
-      color: var(--color-primary-dark);
-      font-size: var(--font-size-xs);
-      font-weight: 500;
-      padding: var(--space-1) var(--space-3);
-      border-radius: var(--radius-full);
-      transition: all var(--transition-fast);
-      
-      &:hover {
-        background: var(--color-primary);
-        color: var(--color-white);
-        transform: translateY(-1px);
-      }
-    }
-  }
-  
-  .job-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-    
-    .job-detail-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      color: var(--color-gray-500);
-      font-size: var(--font-size-sm);
-      
-      .job-icon {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-      }
-      
-      .location-icon {
-        font-size: var(--font-size-sm);
-      }
-      
-      .proposals-count {
-        color: var(--color-primary);
-        font-weight: 500;
-      }
-    }
-  }
-  
-  .client-info {
-    background: var(--color-gray-50);
-    padding: var(--space-4);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--space-4);
-    
-    .client-details {
-      .client-name {
-        font-weight: 600;
-        color: var(--color-gray-900);
-        margin-bottom: var(--space-2);
-        font-size: var(--font-size-sm);
-      }
-      
-      .client-stats {
-        display: flex;
-        gap: var(--space-3);
-        font-size: var(--font-size-xs);
-        color: var(--color-gray-500);
-      }
-    }
-  }
+.find-job-project-description {
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.875rem;
 }
 
-.job-card-footer {
-  padding: var(--space-4) var(--space-6) var(--space-6);
-  
-  .bid-button {
-    width: 100%;
-    background: var(--gradient-primary);
-    color: var(--color-white);
-    border: none;
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-lg);
-    font-weight: 600;
-    font-size: var(--font-size-sm);
+// Skills and Attributes
+.find-job-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.find-job-project-attributes {
+  display: flex;
+  gap: var(--spacing-lg);
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+
+  .find-job-attribute-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    &:active {
-      transform: translateY(0);
-    }
-    
-    .button-icon {
-      width: 18px;
-      height: 18px;
+    gap: var(--spacing-xs);
+
+    .find-job-icon {
+      width: 16px;
+      height: 16px;
     }
   }
 }
 
-// ===================================
-// NO RESULTS STATE
-// ===================================
+// Client Actions Section
+.find-job-client-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-width: 200px;
 
-.no-results {
+  @media (max-width: 768px) {
+    min-width: auto;
+  }
+}
+
+.find-job-client-info {
   text-align: center;
-  padding: var(--space-16) var(--space-4);
-  
-  .no-results-content {
-    h3 {
-      font-size: var(--font-size-2xl);
-      color: var(--color-gray-700);
-      margin-bottom: var(--space-2);
-    }
-    
-    p {
-      color: var(--color-gray-500);
-      font-size: var(--font-size-base);
+
+  .find-job-client-name {
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.875rem;
+  }
+
+  .find-job-client-meta {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+
+    .client-rating {
+      color: var(--warning-color);
+      font-weight: 500;
     }
   }
 }
 
-// ===================================
-// MODAL SYSTEM
-// ===================================
+// Action Buttons
+.find-job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
 
+.find-job-button-primary {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .find-job-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.find-job-button-secondary {
+  border: 2px solid var(--gray-200);
+  color: var(--gray-600);
+  background: white;
+  padding: 0.75rem var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--gray-300);
+    background: var(--gray-50);
+  }
+
+  .find-job-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.find-job-button-submitted {
+  background: var(--gray-200);
+  color: var(--gray-500);
+  border: none;
+  padding: 0.75rem var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  cursor: not-allowed;
+
+  .find-job-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Modal Styles
 .modal-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: var(--space-4);
-  animation: fadeIn var(--transition-normal) ease-out;
+  padding: var(--spacing-md);
 }
 
 .modal-content {
-  background: var(--color-white);
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-2xl);
-  max-width: 640px;
+  background: white;
+  border-radius: var(--border-radius);
+  max-width: 600px;
   width: 100%;
   max-height: 90vh;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
-  animation: slideUp var(--transition-normal) ease-out;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .modal-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--gray-200);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: var(--space-6);
-  border-bottom: 1px solid var(--color-gray-200);
-  background: var(--color-gray-50);
-  
+  align-items: center;
+
   h2 {
-    font-size: var(--font-size-xl);
+    font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--gray-900);
     margin: 0;
   }
-  
+
   .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-500);
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--color-white);
-    border: 1px solid var(--color-gray-300);
-    border-radius: var(--radius-full);
-    color: var(--color-gray-500);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    
+
     &:hover {
-      background: var(--color-gray-100);
-      color: var(--color-gray-700);
-      transform: scale(1.05);
-    }
-    
-    .close-icon {
-      width: 20px;
-      height: 20px;
+      background: var(--gray-100);
+      color: var(--gray-700);
     }
   }
 }
 
 .modal-body {
-  padding: var(--space-6);
-  overflow-y: auto;
-  max-height: calc(90vh - 120px);
+  padding: var(--spacing-lg);
 }
 
-// ===================================
-// PROJECT SUMMARY
-// ===================================
-
+// Proposal Form Styles
 .project-summary {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-white) 100%);
-  padding: var(--space-5);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-6);
-  border-left: 4px solid var(--color-primary);
-  
-  .project-title {
+  background: var(--gray-50);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+  border-left: 4px solid var(--primary-color);
+
+  h4 {
     font-weight: 600;
-    color: var(--color-gray-900);
-    margin-bottom: var(--space-2);
-    font-size: var(--font-size-lg);
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
   }
-  
-  .project-description {
-    color: var(--color-gray-700);
-    margin-bottom: var(--space-3);
-    line-height: 1.5;
-  }
-  
-  .project-meta {
-    display: flex;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    
-    .project-budget,
-    .project-duration {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      color: var(--color-success);
-      font-weight: 600;
-      font-size: var(--font-size-sm);
-      
-      .meta-icon {
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-}
 
-// ===================================
-// PROPOSAL FORM
-// ===================================
+  .budget {
+    color: var(--success-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.875rem;
+  }
 
-.proposal-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
+  .proposals-count {
+    color: var(--gray-500);
+    font-size: 0.75rem;
+  }
 }
 
 .bidding-section {
-  background: var(--color-gray-50);
-  padding: var(--space-5);
-  border-radius: var(--radius-lg);
-  border: 2px dashed var(--color-gray-300);
-  
-  .form-label {
-    display: block;
-    font-weight: 500;
-    color: var(--color-gray-700);
-    margin-bottom: var(--space-2);
-    font-size: var(--font-size-sm);
-  }
-  
+  background: #f1f5f9;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+
   .bid-input-container {
     .bid-input {
-      width: 100%;
-      font-size: var(--font-size-xl);
+      font-size: 1.1rem;
       font-weight: 600;
-      padding: var(--space-4);
-      border: 2px solid var(--color-gray-300);
-      border-radius: var(--radius-md);
-      background: var(--color-white);
-      transition: all var(--transition-fast);
-      
+      padding: 0.75rem;
+      width: 100%;
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      transition: border-color 0.2s;
+
       &:focus {
         outline: none;
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-        transform: scale(1.02);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
       }
     }
-    
+
     .bid-recommendations {
-      margin-top: var(--space-3);
-      
+      margin-top: var(--spacing-sm);
+
+      .bid-range {
+        font-size: 0.875rem;
+        color: var(--gray-500);
+        margin-bottom: var(--spacing-sm);
+      }
+
       .bid-suggestions {
         display: flex;
-        gap: var(--space-2);
-        flex-wrap: wrap;
-        
-        .suggestion-button {
-          display: flex;
-          align-items: center;
-          gap: var(--space-1);
-          font-size: var(--font-size-xs);
-          padding: var(--space-2) var(--space-3);
-          background: var(--color-white);
-          color: var(--color-gray-600);
-          border: 1px solid var(--color-gray-300);
-          border-radius: var(--radius-md);
+        gap: var(--spacing-sm);
+
+        .bid-suggestion-btn {
+          font-size: 0.75rem;
+          padding: var(--spacing-xs) var(--spacing-sm);
+          background: var(--gray-200);
+          border: none;
+          border-radius: 4px;
           cursor: pointer;
-          transition: all var(--transition-fast);
-          
+          transition: background-color 0.2s;
+          color: var(--gray-700);
+
           &:hover {
-            background: var(--color-primary);
-            color: var(--color-white);
-            border-color: var(--color-primary);
-            transform: translateY(-1px);
-          }
-          
-          .suggestion-icon {
-            width: 14px;
-            height: 14px;
+            background: var(--gray-300);
           }
         }
       }
@@ -584,219 +534,175 @@
 }
 
 .form-group {
+  margin-bottom: var(--spacing-lg);
+
   .form-label {
     display: block;
     font-weight: 500;
-    color: var(--color-gray-700);
-    margin-bottom: var(--space-2);
-    font-size: var(--font-size-sm);
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.875rem;
   }
-  
-  .select-trigger {
-    width: 100%;
-    padding: var(--space-3);
-    border: 2px solid var(--color-gray-300);
-    border-radius: var(--radius-md);
-    background: var(--color-white);
-    transition: all var(--transition-fast);
-    
-    &:focus {
-      outline: none;
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-    }
-  }
-  
+
+  .form-input,
   .form-textarea {
     width: 100%;
-    border: 2px solid var(--color-gray-300);
-    border-radius: var(--radius-md);
-    padding: var(--space-3);
-    font-size: var(--font-size-sm);
-    background: var(--color-white);
-    transition: all var(--transition-fast);
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.5;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
     font-family: inherit;
-    
+
     &:focus {
       outline: none;
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
-    
+
     &::placeholder {
-      color: var(--color-gray-400);
+      color: var(--gray-400);
     }
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
   }
 }
 
-// ===================================
-// FORM ACTIONS
-// ===================================
-
 .form-actions {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
-  border-top: 2px solid var(--color-gray-200);
-  
-  .cancel-button {
-    flex: 1;
-    padding: var(--space-3) var(--space-4);
-    background: var(--color-white);
-    color: var(--color-gray-700);
-    border: 2px solid var(--color-gray-300);
-    border-radius: var(--radius-md);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    
-    &:hover {
-      border-color: var(--color-gray-400);
-      background: var(--color-gray-50);
-    }
-  }
-  
-  .submit-button {
-    flex: 1;
-    background: var(--gradient-success);
-    color: var(--color-white);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-200);
+
+  .submit-proposal-btn {
+    width: 100%;
+    background: var(--success-gradient);
+    color: white;
     border: none;
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
     font-weight: 600;
+    font-size: 0.875rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
+    transition: all 0.3s ease;
     cursor: pointer;
-    transition: all var(--transition-fast);
-    
-    &:hover {
+
+    &:hover:not(:disabled) {
       transform: translateY(-1px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
     }
-    
-    &:active {
-      transform: translateY(0);
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
     }
-    
-    .button-icon {
-      width: 18px;
-      height: 18px;
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #ffffff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
     }
   }
 }
 
-// ===================================
-// ANIMATIONS
-// ===================================
+// No Results State
+.no-results {
+  text-align: center;
+  padding: 3rem var(--spacing-md);
+  color: var(--gray-500);
 
-@keyframes fadeIn {
+  p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .clear-filters-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #2563eb;
+    }
+  }
+}
+
+// Animations
+@keyframes spin {
   from {
-    opacity: 0;
+    transform: rotate(0deg);
   }
   to {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-// ===================================
-// RESPONSIVE DESIGN
-// ===================================
-
+// Responsive Design
 @media (max-width: 768px) {
-  .find-job-page {
-    padding: var(--space-6) 0;
+  .find-job-header .find-job-title {
+    font-size: 2rem;
   }
-  
-  .find-job-header {
-    .find-job-title {
-      font-size: var(--font-size-3xl);
-    }
-    
-    .find-job-subtitle {
-      font-size: var(--font-size-base);
-    }
+
+  .find-job-filters .find-job-filter-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .job-card-header,
-  .job-card-body,
-  .job-card-footer {
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
+
+  .find-job-results-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
   }
-  
+
   .modal-content {
-    margin: var(--space-4);
+    margin: var(--spacing-md);
     max-height: calc(100vh - 2rem);
   }
-  
-  .modal-header,
-  .modal-body {
-    padding: var(--space-4);
-  }
-  
-  .form-actions {
+
+  .find-job-project-attributes {
     flex-direction: column;
+    gap: var(--spacing-sm);
   }
 }
 
 @media (max-width: 480px) {
-  .find-job-header {
-    .find-job-title {
-      font-size: var(--font-size-2xl);
-    }
+  .find-job-page {
+    padding: var(--spacing-md) 0;
   }
-  
-  .job-meta,
-  .job-details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-  }
-  
-  .project-meta {
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  
-  .bid-suggestions {
-    flex-direction: column;
-  }
-}
 
-// ===================================
-// ACCESSIBILITY
-// ===================================
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .find-job-header .find-job-title {
+    font-size: 1.75rem;
   }
-}
 
-.job-card:focus-visible,
-.bid-button:focus-visible,
-.submit-button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  .find-job-card-content {
+    padding: var(--spacing-md);
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: var(--spacing-md);
+  }
+
+  .bidding-section .bid-recommendations .bid-suggestions {
+    flex-direction: column;
+  }
 }
